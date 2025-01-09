@@ -553,6 +553,13 @@ const calendar = {
     const cD = calObj.getUTCDate();
 
     return this.solar2lunar(cY, cM, cD);
+  },
+
+  getGanZhiTime: function (dateGan, time) {
+    //const hours = time.getHours();
+    const timeOffset = Math.floor((time+1) / 2) % 12;
+    const offset = (Gan.indexOf(dateGan) + timeOffset);
+    return this.toGanZhi(offset)
   }
 };
 
